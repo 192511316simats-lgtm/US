@@ -1,0 +1,6 @@
+{
+  "name": "Our Story",
+  "description": "OUR STORY — 20.12.2021 ♡ Romantic interactive digital scrapbook and memory book.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

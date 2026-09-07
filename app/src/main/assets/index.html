@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>OUR STORY — 20.12.2021 ♡</title>
+  <!-- Google Fonts: Romantic handwritten and elegant serif fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Dancing+Script:wght@500;700&family=Kalam:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Patrick+Hand&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient floating sparkles and hearts container -->
+  <div class="floating-hearts-bg" id="floatingHeartsBg"></div>
+
+  <!-- Top bar with page indicator and audio control -->
+  <header class="top-nav-bar">
+    <div class="page-counter-badge" id="pageCounterBadge">
+      <span class="heart-icon">♡</span>
+      <span id="currentPageNum">01</span> / <span id="totalPageNum">21</span>
+    </div>
+    
+    <div class="header-controls">
+      <!-- Music Control -->
+      <div class="music-player-pill" id="musicToggleBtn" title="Play / Pause 'Un Vizhigalil' (G.V. Prakash)">
+        <span class="music-note" id="musicNoteIcon">♫</span>
+        <span class="music-text" id="musicStatusText">MUSIC: OFF</span>
+        <div class="music-bars" id="musicVisualizer">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <!-- Hidden file input for custom audio if user has mp3 -->
+      <input type="file" id="audioFileInput" accept="audio/*" style="display: none;">
+      <!-- Audio element (Web Audio synthesizer is used for Un Vizhigalil melody) -->
+      <audio id="bgAudio" loop></audio>
+    </div>
+  </header>
+
+  <!-- Central 3D Book Container -->
+  <main class="book-viewport">
+    <div class="book-stage" id="bookStage">
+      <!-- Pages will be structured inside the book element -->
+      <div class="book" id="digitalBook">
+
+        <!-- ================= PAGE 01: COVER ================= -->
+        <section class="book-page active" data-page="1" id="page-1">
+          <div class="page-inner cover-page">
+            <div class="cover-border-emboss">
+              <div class="corner-ribbon top-left"></div>
+              <div class="corner-ribbon top-right"></div>
+              <div class="cover-heart-seal">
+                <span>♡</span>
+              </div>
+              <div class="washi-tape tape-center-top"></div>
+
+              <div class="cover-content">
+                <span class="cover-eyebrow">A Handmade Memory Diary</span>
+                <h1 class="cover-main-title">OUR STORY ♡</h1>
+                <p class="cover-subtitle">“not just a story of days or months…”</p>
+
+                <div class="cover-milestone-box">
+                  <span class="milestone-line">5 years.</span>
+                  <span class="milestone-line">Countless memories.</span>
+                  <span class="milestone-line highlight-script">One story.</span>
+                </div>
+
+                <div class="special-date-badge">
+                  <span class="date-glow-text">20 • 12 • 2021</span>
+                </div>
+
+                <p class="cover-handwritten-quote">
+                  “Some stories are written.<br>
+                  Ours was lived, my love.”
+                </p>
+
+                <div class="character-mood-avatar">
+                  <img src="images/couple_chibi.jpg" alt="Our Story Chibi Couple" class="chibi-art-img">
+                  <div class="chibi-bubble">En thangoo ♡</div>
+                </div>
+
+                <button type="button" class="btn-open-story" id="btnOpenStory">
+                  <span>OPEN OUR STORY</span>
+                  <span class="btn-arrow">→</span>
+                </button>
+              </div>
+
+              <div class="bookmark-ribbon"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 02: 4th & 5th Standard ================= -->
+        <section class="book-page" data-page="2" id="page-2">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 01</span>
+              <h2 class="page-title">WHERE IT ALL BEGAN</h2>
+              <span class="timeline-tag">4th & 5th Standard</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Back in 4th and 5th standard, we were just quiet classmates sitting in the same classroom. We barely had any conversation between us.
+                </p>
+                <p class="story-paragraph">
+                  We were just two kids sharing benches and blackboards, completely unaware that one day, you would become my whole universe, <span class="sentiment-word">my pattu</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <!-- Cartoon Chibi with School Role -->
+                <div class="cartoon-companion-box mood-school">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🎒✏️</span>
+                    <span class="chibi-role-label">School Days</span>
+                  </div>
+                  <div class="companion-speech">Classmates without a clue! ♡</div>
+                </div>
+
+                <!-- Real Photo Upload Frame -->
+                <div class="polaroid-frame" data-photo-id="photo_page_2">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Our School Memories</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Classroom 4th & 5th Standard ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Destiny was already sitting right next to us.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 03: 6th Standard ================= -->
+        <section class="book-page" data-page="3" id="page-3">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 02</span>
+              <h2 class="page-title">JUST 'HI' AND 'BYE'</h2>
+              <span class="timeline-tag">6th Standard</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  In 6th standard, we finally started noticing each other across the room.
+                </p>
+                <p class="story-paragraph">
+                  Our entire world of interaction back then was just a shy <em>“Hi”</em> in the morning and a hesitant little <em>“Bye”</em> when school ended.
+                </p>
+                <p class="story-paragraph">
+                  Even though it was only two words, my heart would secretly dance whenever you looked my way, <span class="sentiment-word">my thanga pulla</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-waving">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">👋🌸</span>
+                    <span class="chibi-role-label">Shy Hello</span>
+                  </div>
+                  <div class="companion-speech">“Hi… Bye…” (Blushing!) ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_3">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Those Sweet Days</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">When 'Hi' meant everything ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Two small words that quietly sowed a seed.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 04: 7th & 8th Standard ================= -->
+        <section class="book-page" data-page="4" id="page-4">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 03</span>
+              <h2 class="page-title">WHEN THE WORLD PAUSED</h2>
+              <span class="timeline-tag">7th & 8th Standard</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Then COVID happened. Normal school life was suddenly interrupted and the whole world came to a pause.
+                </p>
+                <p class="story-paragraph">
+                  There were lockdowns, empty classrooms, and quiet months at home. But even when we couldn't see each other, you never really left my thoughts, <span class="sentiment-word">my love</span>.
+                </p>
+                <p class="story-paragraph">
+                  Distance had started early, but so had my quiet fondness for you.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-mask">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">😷💻</span>
+                    <span class="chibi-role-label">Lockdown Days</span>
+                  </div>
+                  <div class="companion-speech">Missing you behind the screen ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_4">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Lockdown Memories</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">When the world paused, I thought of you ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Time paused, but feelings stayed.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 05: 2021 Reunion ================= -->
+        <section class="book-page" data-page="5" id="page-5">
+          <div class="page-inner notebook-page special-moment-page">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 04</span>
+              <h2 class="page-title">“MM SOLLU MA, EPPADI MA IRUKA?”</h2>
+              <span class="timeline-tag">2021 • School Corridor</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  In 9th, our story slowly began to have an entry into each other's lives. In 2021, after a very long time, school was held one day.
+                </p>
+                <p class="story-paragraph">
+                  I saw you walking across the floor. My heart was pounding and I wondered: <em>“Did you forget me?”</em>
+                </p>
+                <p class="story-paragraph">
+                  Gathering all my courage, I called out to you:
+                  <span class="dialogue-shout">“Oii...!”</span>
+                </p>
+                <p class="story-paragraph">
+                  You turned around, looked straight at me, and with that warmest, sweetest voice asked:
+                  <span class="dialogue-reply">“Mm sollu ma, eppadi ma iruka?”</span>
+                </p>
+                <p class="story-paragraph highlight-sentence">
+                  In that very second, in that hallway, looking at you... that was the exact moment I fell for you, <span class="sentiment-word">my thangoo</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-heartbeat">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">💓✨</span>
+                    <span class="chibi-role-label">The Spark</span>
+                  </div>
+                  <div class="companion-speech">That sweet smile melted my heart! ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_5">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">That Corridor Moment</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">The moment I fell for you ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Just one line from your lips, and my whole world turned pink.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 06: Falling for Him ================= -->
+        <section class="book-page" data-page="6" id="page-6">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 05</span>
+              <h2 class="page-title">FINDING LITTLE REASONS</h2>
+              <span class="timeline-tag">Late 2021</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  After that day, everything changed for me. I started finding silly little reasons just to see you every single day.
+                </p>
+                <p class="story-paragraph">
+                  Walking by your bench, looking for your backpack, waiting for a passing glimpse—I did all those innocent, crazy little things just to see you smile, <span class="sentiment-word">my pattu</span>.
+                </p>
+                <p class="story-paragraph">
+                  And then you confessed your love to me. You didn't even know that I already had feelings for you. I accepted the very next day.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-love">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🥰💌</span>
+                    <span class="chibi-role-label">Secret Smiles</span>
+                  </div>
+                  <div class="companion-speech">Looking for reasons to see you! ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_6">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Secret Glances</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">You confessed, I said yes ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“My heart had already said yes before you even asked.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 07: DECEMBER 20, 2021 ================= -->
+        <section class="book-page" data-page="7" id="page-7">
+          <div class="page-inner gold-embossed-page">
+            <div class="washi-tape tape-top-left gold-tape"></div>
+            <div class="washi-tape tape-top-right gold-tape"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp highlight-badge">OUR MOST SACRED DATE</span>
+              <h2 class="page-title big-title">THE DAY EVERYTHING CHANGED ♡</h2>
+            </div>
+
+            <div class="page-body-layout milestone-layout">
+              <div class="date-hero-display">
+                <div class="calendar-scrapbook-block">
+                  <span class="cal-day">20</span>
+                  <span class="cal-month">DECEMBER</span>
+                  <span class="cal-year">2021</span>
+                </div>
+                <div class="tamizh-quote-stamp">
+                  “Finally, nee naa nu illama...<br>
+                  <strong>ONAA NAMBA aaganom.</strong>”
+                </div>
+              </div>
+
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  This was the golden day you proposed and we officially became ‘US’.
+                </p>
+                <p class="story-paragraph">
+                  I already carried you in my heart so deeply. When you told me your feelings, my happiness had no boundaries. I accepted the next day, sealing our forever, <span class="sentiment-word">my thanga pulla</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-hug">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">💍✨</span>
+                    <span class="chibi-role-label">Together Forever</span>
+                  </div>
+                  <div class="companion-speech">Onaa Namba Aaganom ♡</div>
+                </div>
+
+                <div class="polaroid-frame special-polaroid" data-photo-id="photo_page_7">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">20.12.2021</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">The Day Everything Changed ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“From 'You & Me' to 'US' — 20.12.2021.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 08: First Challenge ================= -->
+        <section class="book-page" data-page="8" id="page-8">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 06</span>
+              <h2 class="page-title">OUR FIRST STORM</h2>
+              <span class="timeline-tag">2 Months In</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  After around two months of being together, our relationship was caught at home.
+                </p>
+                <p class="story-paragraph">
+                  There were difficulties, scoldings, and heavy restrictions placed on us. Everything felt uncertain and frightening for a moment.
+                </p>
+                <p class="story-paragraph highlight-sentence">
+                  We were tested early. But we stayed.
+                </p>
+                <p class="story-paragraph">
+                  We didn't give up on each other. We continued talking despite the situation, protecting the fragile flame of our love, <span class="sentiment-word">my love</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-umbrella">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">☔🛡️</span>
+                    <span class="chibi-role-label">First Storm</span>
+                  </div>
+                  <div class="companion-speech">Through rain, we held on ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_8">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Tested Early</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">We fought for our love ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Storms don't break deep roots.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 09: 10th Standard ================= -->
+        <section class="book-page" data-page="9" id="page-9">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 07</span>
+              <h2 class="page-title">THE DISTANCE YEARS</h2>
+              <span class="timeline-tag">10th Standard Phase</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Life continued, and we entered 10th standard. This was another major phase of our story, filled with board exam pressures and growing up.
+                </p>
+                <p class="story-paragraph">
+                  Then came the turning point where I had to join the hostel for school.
+                </p>
+                <p class="story-paragraph">
+                  Packing my bags, leaving the familiar routines, and knowing I wouldn't see your face every morning was so heartbreaking, <span class="sentiment-word">my thangoo</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-backpack">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🎒📚</span>
+                    <span class="chibi-role-label">10th Standard</span>
+                  </div>
+                  <div class="companion-speech">Heading to the hostel… ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_9">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">10th Standard Days</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Growing through 10th standard ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“A big chapter of change began.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 10: Hostel Days ================= -->
+        <section class="book-page" data-page="10" id="page-10">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 08</span>
+              <h2 class="page-title">HOSTEL WALLS</h2>
+              <span class="timeline-tag">Quiet Evenings</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Hostel life was so quiet and lonely. Being away from home, away from you, and away from everything I loved tested me deeply.
+                </p>
+                <p class="story-paragraph">
+                  Every evening when study hours ended, I would sit alone near the window, staring up at the night sky and wondering what you were doing, <span class="sentiment-word">my pattu</span>.
+                </p>
+                <p class="story-paragraph">
+                  My notebook became the only place where I could safely whisper your name.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-diary">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">📖🌙</span>
+                    <span class="chibi-role-label">Hostel Nights</span>
+                  </div>
+                  <div class="companion-speech">Writing to you in my diary ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_10">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Hostel Memories</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Thinking of you under the night sky ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“My diary knew more about you than anyone else.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 11: 4 Months of Silence + Poem ================= -->
+        <section class="book-page" data-page="11" id="page-11">
+          <div class="page-inner notebook-page poem-page-style">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 09</span>
+              <h2 class="page-title">FOUR MONTHS OF SILENCE</h2>
+              <span class="timeline-tag">The Hostel Poem</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  During that hostel period, there was approximately a four-month stretch where we did not communicate at all.
+                </p>
+                <p class="story-paragraph">
+                  Four long months without your voice, without a text, without knowing how you were. In that aching silence, I wrote this poem for you in my diary:
+                </p>
+
+                <!-- EXACT POEM FROM USER -->
+                <div class="handwritten-poem-box">
+                  <p class="exact-poem-line">“unnal ennai maraka mudium endran</p>
+                  <p class="exact-poem-line">enalum unnai maraka mudium</p>
+                  <p class="exact-poem-line">anal atharku sila natkal agum</p>
+                  <p class="exact-poem-line">nbtakal mathangal agum</p>
+                  <p class="exact-poem-line">mathangal vardangal agum</p>
+                  <p class="exact-poem-line">varudsangal valkain mudivaagum”</p>
+                </div>
+
+                <p class="story-paragraph">
+                  Every single word came straight from my longing heart, <span class="sentiment-word">my thanga pulla</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-longing">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">💌💧</span>
+                    <span class="chibi-role-label">Silent Longing</span>
+                  </div>
+                  <div class="companion-speech">My heart wrote this for you ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_11">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">My Diary Pages</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Written in 4 months of silence ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“To forget you would take the end of my life.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 12: The Last Day of 10th ================= -->
+        <section class="book-page" data-page="12" id="page-12">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 10</span>
+              <h2 class="page-title">THE DAY I WAITED</h2>
+              <span class="timeline-tag">End of 10th Standard</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  After finishing 10th, I saw everyone and waited, expecting you to come.
+                </p>
+                <p class="story-paragraph">
+                  I really hoped with all my heart that you would come and see me just once before school ended. I kept looking at the gate, checking the crowd with every passing minute.
+                </p>
+                <p class="story-paragraph highlight-sentence">
+                  But you didn’t come.
+                </p>
+                <p class="story-paragraph">
+                  I left school on the last day of 10th without seeing you. That silence hurt so deeply, <span class="sentiment-word">my love</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-waiting">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">⏳🚪</span>
+                    <span class="chibi-role-label">Waiting at the Gate</span>
+                  </div>
+                  <div class="companion-speech">Still looking for you… ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_12">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">The School Gate</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">The day I waited for you ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“I left with an empty corridor, but a heart full of you.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 13: 10th Results ================= -->
+        <section class="book-page" data-page="13" id="page-13">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 11</span>
+              <h2 class="page-title">LIFE TOOK US IN DIFFERENT DIRECTIONS</h2>
+              <span class="timeline-tag">10th Result Day</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Then the 10th result came out. That day changed everything.
+                </p>
+                <p class="story-paragraph">
+                  Our school situations changed. I changed school.
+                </p>
+                <p class="story-paragraph">
+                  There was a two-year gap in our communication. We did not communicate normally during that long period, but neither of us completely stopped caring, <span class="sentiment-word">my thangoo</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-diverge">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🛤️🍃</span>
+                    <span class="chibi-role-label">Two Paths</span>
+                  </div>
+                  <div class="companion-speech">Different schools, same bond ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_13">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Different Directions</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Two years of quiet caring ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Paths divided, but hearts never forgot.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 14: 12th Standard ================= -->
+        <section class="book-page" data-page="14" id="page-14">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 12</span>
+              <h2 class="page-title">EVEN FROM FAR AWAY...</h2>
+              <span class="timeline-tag">12th Standard</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  During 12th standard, we spoke only around two times in that entire year.
+                </p>
+                <p class="story-paragraph">
+                  Even those two precious conversations had to happen through your friend's phone in secret.
+                </p>
+                <p class="story-paragraph">
+                  Just hearing your voice for a few brief minutes gave me the strength to keep going for months, <span class="sentiment-word">my pattu</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-phonecall">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">📞✨</span>
+                    <span class="chibi-role-label">Stolen Calls</span>
+                  </div>
+                  <div class="companion-speech">Hearing your voice was magic! ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_14">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">12th Standard Memories</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Two precious calls in a whole year ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Two calls were enough to remind me you were mine.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 15: After 12th & Long Distance ================= -->
+        <section class="book-page" data-page="15" id="page-15">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 13</span>
+              <h2 class="page-title">TWO COLLEGES, ONE PROMISE</h2>
+              <span class="timeline-tag">After 12th • College Days</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  After 12th, we finally started talking properly again. But life took us into different colleges.
+                </p>
+                <p class="story-paragraph">
+                  One went to one college, and the other went to another college. Our relationship became long-distance again.
+                </p>
+                <p class="story-paragraph">
+                  Between campus schedules, phone calls, and missing each other, our love found a way to bridge every mile, <span class="sentiment-word">my thanga pulla</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-longdistance">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🎓📱</span>
+                    <span class="chibi-role-label">Long Distance</span>
+                  </div>
+                  <div class="companion-speech">Miles apart, close at heart ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_15">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">College Days</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Long-distance college journey ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Distance only proved how strong our love truly was.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 16: Family Phase ================= -->
+        <section class="book-page" data-page="16" id="page-16">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-left"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 14</span>
+              <h2 class="page-title">LOVE HAD TO GROW UP</h2>
+              <span class="timeline-tag">Family Phase</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  There was another difficult phase when our relationship was discovered at home again.
+                </p>
+                <p class="story-paragraph">
+                  My sister found out first. Later, my mother accepted our relationship with some conditions.
+                </p>
+                <div class="handwritten-sticky-note">
+                  “Not everything was easy.<br>
+                  But somehow, we kept choosing each other.”
+                </div>
+                <p class="story-paragraph">
+                  We learned to be mature, patient, and strong for our future together, <span class="sentiment-word">my love</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-family">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🏡🤝</span>
+                    <span class="chibi-role-label">Growing Up</span>
+                  </div>
+                  <div class="companion-speech">Still choosing each other ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_16">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Family Phase</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Growing together through trials ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Every obstacle only made our bond more unbreakable.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 17: The Major Fight (Anger Reaction) ================= -->
+        <section class="book-page" data-page="17" id="page-17">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 15</span>
+              <h2 class="page-title">THE TWO MONTH SILENCE</h2>
+              <span class="timeline-tag">Our Deepest Test</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  Then came our biggest fight. The misunderstanding and pain were so intense that we stopped talking for around two full months.
+                </p>
+                <p class="story-paragraph">
+                  I was so hurt and angry that I blocked you everywhere.
+                </p>
+                <p class="story-paragraph">
+                  Even during those cold weeks, you still tried so hard to contact me through your friend's phone. You kept asking me for just one chance, asking me to give you one opportunity to change for us, <span class="sentiment-word">my pattu</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <!-- Chibi with ANGER reaction as requested by user -->
+                <div class="cartoon-companion-box mood-anger">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">😤💔</span>
+                    <span class="chibi-role-label">Hurt & Blocked</span>
+                  </div>
+                  <div class="companion-speech">Angry pouts… but you never stopped trying! ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_17">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">The Silence</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Two months of silence that changed us ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“Sometimes things break so they can be rebuilt better.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 18: Birthday / Second Chance (NO BIRTHDAY WISHES HERE) ================= -->
+        <section class="book-page" data-page="18" id="page-18">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-top-right"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 16</span>
+              <h2 class="page-title">THE SECOND CHANCE</h2>
+              <span class="timeline-tag">My Birthday • The Turning Point</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  On my birthday, after watching how sincerely you fought for us and kept asking for an opportunity to change, I listened to my heart.
+                </p>
+                <p class="story-paragraph highlight-sentence">
+                  On my birthday, I decided: “Let's give this one more chance.”
+                </p>
+                <p class="story-paragraph">
+                  That decision became our greatest turning point. I chose to believe in our love and in your effort, <span class="sentiment-word">my thangoo</span>.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <div class="cartoon-companion-box mood-turningpoint">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🔑💖</span>
+                    <span class="chibi-role-label">Second Chance</span>
+                  </div>
+                  <div class="companion-speech">I gave you another chance on my birthday ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_18">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">A Fresh Beginning</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Choosing love all over again ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“The best birthday gift I gave myself was choosing us.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 19: DEDICATED BIRTHDAY WISH SLIDE ================= -->
+        <section class="book-page" data-page="19" id="page-19">
+          <div class="page-inner birthday-page">
+            <div class="washi-tape tape-top-left birthday-tape"></div>
+            <div class="washi-tape tape-top-right birthday-tape"></div>
+            
+            <div class="birthday-card-wrapper">
+              <div class="birthday-banner-decorations">
+                <span class="balloon b1">🎈</span>
+                <span class="balloon b2">🎂</span>
+                <span class="balloon b3">🎈</span>
+                <span class="sparkle-star">✨</span>
+              </div>
+
+              <span class="birthday-tagline">FOR MY FAVORITE PERSON</span>
+              <h2 class="birthday-main-wish">HAPPI BIRTHDAY THANGOO ♡</h2>
+
+              <div class="birthday-message-body">
+                <p class="story-paragraph">
+                  To the one who holds my heart gently in his hands: Happy Birthday to you, <span class="sentiment-word">my thanga pulla</span>!
+                </p>
+                <p class="story-paragraph">
+                  You are my safe haven, my peace, and my greatest blessing. May your life be filled with endless laughter, sweet happiness, and all the love you deserve.
+                </p>
+                <p class="story-paragraph handwritten-birthday-note">
+                  “I promise to celebrate every birthday with you, forever by your side, <span class="sentiment-word">my love</span>.”
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <!-- Chibi with Birthday Hat and Cake -->
+                <div class="cartoon-companion-box mood-birthday">
+                  <div class="custom-chibi-badge">
+                    <span class="chibi-emoji">🎉🍰</span>
+                    <span class="chibi-role-label">Birthday Celebration</span>
+                  </div>
+                  <div class="companion-speech">HAPPI BIRTHDAY THANGOO ♡</div>
+                </div>
+
+                <div class="polaroid-frame birthday-polaroid" data-photo-id="photo_page_19">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Birthday Moments</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">HAPPI BIRTHDAY THANGOO ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“My favorite day is celebrating you.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 20: The Version of You I See Now ================= -->
+        <section class="book-page" data-page="20" id="page-20">
+          <div class="page-inner notebook-page">
+            <div class="washi-tape tape-center-top"></div>
+            <div class="scrapbook-page-header">
+              <span class="chapter-stamp">CHAPTER 17</span>
+              <h2 class="page-title">THE VERSION OF YOU I SEE NOW</h2>
+              <span class="timeline-tag">Growth & Genuine Happiness</span>
+            </div>
+
+            <div class="page-body-layout">
+              <div class="story-text-container">
+                <p class="story-paragraph">
+                  After getting another chance, you changed so many things for us. You started changing yourself because you genuinely cared from deep within your soul.
+                </p>
+                <p class="story-paragraph">
+                  If I tell you I don't like something, you immediately try to change it. If I say no to something, you respect my boundary completely without hesitation.
+                </p>
+                <div class="handwritten-sticky-note soft-pink-note">
+                  “I don't know what I did to deserve this much effort...<br>
+                  but I see it. I feel it. And I treasure it, <span class="sentiment-word">my pattu</span>.”
+                </div>
+                <p class="story-paragraph">
+                  And somehow... we found our way back. We are genuinely happy now, surrounded by peace and unconditional love.
+                </p>
+              </div>
+
+              <div class="page-visual-cluster">
+                <!-- Chibi Couple Hug matching uploaded cartoon -->
+                <div class="cartoon-companion-box mood-reunited">
+                  <img src="images/couple_chibi.jpg" alt="Reunited Chibi" class="reunited-chibi-img" onerror="this.src='images/img_couple_chibi_1788798764987.jpg'">
+                  <div class="companion-speech">Look how far we've come! ♡</div>
+                </div>
+
+                <div class="polaroid-frame" data-photo-id="photo_page_20">
+                  <div class="polaroid-photo-area">
+                    <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                    <div class="upload-placeholder-content">
+                      <span class="camera-icon">📷</span>
+                      <span class="upload-label-title">Our Happiest Now</span>
+                      <span class="upload-label-sub">Tap to attach our real photo</span>
+                    </div>
+                  </div>
+                  <div class="polaroid-caption">Genuinely happy together ♡</div>
+                  <input type="file" class="hidden-photo-input" accept="image/*">
+                </div>
+              </div>
+            </div>
+            <div class="page-footer-quote">“You didn't just promise. You showed me with your actions.”</div>
+          </div>
+        </section>
+
+        <!-- ================= PAGE 21: FINAL PAGE — WILL YOU MARRY ME? ================= -->
+        <section class="book-page" data-page="21" id="page-21">
+          <div class="page-inner final-page-style">
+            <div class="washi-tape tape-top-left gold-tape"></div>
+            <div class="washi-tape tape-top-right gold-tape"></div>
+
+            <div class="final-page-content">
+              <!-- Sacred Quote from User -->
+              <div class="sacred-tamil-box">
+                <p class="tamil-quote-line">“ipraviel enna puniyam seitheano theriyavillai</p>
+                <p class="tamil-quote-line">unnai aadaivatharku”</p>
+              </div>
+
+              <div class="final-summary-stats">
+                <span class="stat-pill">5 Years</span>
+                <span class="stat-pill">So Many Chapters</span>
+                <span class="stat-pill highlight">Still Us ♡</span>
+              </div>
+
+              <!-- Proposal Rings Visual from User Upload -->
+              <div class="proposal-visual-hero">
+                <img src="images/marry_me.jpg" alt="Will you marry me rings" class="proposal-rings-img">
+                <div class="proposal-calligraphy-banner">
+                  <span class="marry-calligraphy">Will You Marry Me, My Love? 💍</span>
+                </div>
+              </div>
+
+              <!-- Interactive Proposal Buttons with Confetti Trigger -->
+              <div class="proposal-buttons-cluster">
+                <button type="button" class="btn-proposal btn-yes" id="btnMarryYes">
+                  <span>YES! FOREVER ♡</span>
+                </button>
+                <button type="button" class="btn-proposal btn-yes-alt" id="btnMarryYesOfCourse">
+                  <span>YES, OF COURSE! 💍✨</span>
+                </button>
+              </div>
+
+              <div class="proposal-accepted-toast" id="proposalAcceptedToast">
+                <span>♡ En thangoo said YES! Our forever begins now! ♡</span>
+              </div>
+
+              <p class="final-stay-line">
+                “Let's stay like this till the very last page, <span class="sentiment-word">my love</span>.”
+              </p>
+
+              <!-- Final Polaroid Photo Area for Couple's Favorite Picture -->
+              <div class="polaroid-frame final-polaroid" data-photo-id="photo_page_21">
+                <div class="polaroid-photo-area">
+                  <img class="uploaded-img-preview" src="" alt="" style="display: none;">
+                  <div class="upload-placeholder-content">
+                    <span class="camera-icon">📷</span>
+                    <span class="upload-label-title">Our Favorite Picture</span>
+                    <span class="upload-label-sub">Tap to attach our real photo</span>
+                  </div>
+                </div>
+                <div class="polaroid-caption">Till the very last page and beyond ♡</div>
+                <input type="file" class="hidden-photo-input" accept="image/*">
+              </div>
+
+              <div class="final-epilogue-box">
+                <span class="epilogue-title">THE END?</span>
+                <span class="epilogue-subtitle">No. Just another chapter.</span>
+                <div class="final-soft-heart">♡</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- .book -->
+    </div><!-- .book-stage -->
+  </main>
+
+  <!-- Bottom Navigation with Realistic Page Turning -->
+  <footer class="bottom-nav-bar">
+    <button type="button" class="nav-btn prev-btn" id="btnPrevPage">
+      <span class="nav-arrow">←</span>
+      <span class="nav-text">BACK</span>
+    </button>
+
+    <!-- Page dots progress bar -->
+    <div class="progress-track" id="progressTrack">
+      <!-- Generated dynamically in script.js -->
+    </div>
+
+    <button type="button" class="nav-btn next-btn" id="btnNextPage">
+      <span class="nav-text">NEXT</span>
+      <span class="nav-arrow">→</span>
+    </button>
+  </footer>
+
+  <!-- Confetti Canvas overlay -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
